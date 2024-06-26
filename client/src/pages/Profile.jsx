@@ -161,7 +161,8 @@ export default function Profile() {
     }
   };
   return (
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className=' bg-rose-100 shadow-md h-full'>
+  <div className=' p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
@@ -183,7 +184,7 @@ export default function Profile() {
               Error Image upload (image must be less than 2 mb)
             </span>
           ) : filePerc > 0 && filePerc < 100 ? (
-            <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
+            <span className='text-rose-700'>{`Uploading ${filePerc}%`}</span>
           ) : filePerc === 100 ? (
             <span className='text-green-700'>Image successfully uploaded!</span>
           ) : (
@@ -215,7 +216,7 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-rose-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
@@ -267,7 +268,7 @@ export default function Profile() {
                 />
               </Link>
               <Link
-                className='text-slate-700 font-semibold  hover:underline truncate flex-1'
+                className='text-rose-700 font-semibold  hover:underline truncate flex-1'
                 to={`/listing/${listing._id}`}
               >
                 <p>{listing.name}</p>
@@ -289,5 +290,7 @@ export default function Profile() {
         </div>
       )}
     </div>
+    </div>
+    
   );
 }

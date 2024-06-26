@@ -23,17 +23,17 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-slate-200 shadow-md'>
+    <header className='bg-rose-300 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
-          <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-            <span className='text-slate-500'>Ghar</span>
-            <span className='text-slate-700'>Dekho</span>
+          <h1 className='font-bold text-sm sm:text-2xl flex flex-wrap'>
+            <span className='text-amber-300'>Naya </span>
+            <span className='text-rose-700'>Nivas</span>
           </h1>
         </Link>
         <form
           onSubmit={handleSubmit}
-          className='bg-slate-100 p-3 rounded-lg flex items-center'
+          className='bg-rose-100 p-3 rounded-2xl flex items-center'
         >
           <input
             type='text'
@@ -43,17 +43,17 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <FaSearch className='text-slate-600' />
+            <FaSearch className='text-rose-500' />
           </button>
         </form>
         <ul className='flex gap-4'>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:underline'>
               Home
             </li>
           </Link>
           <Link to='/about'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:underline'>
               About
             </li>
           </Link>
@@ -65,7 +65,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <li className='font-bold text-sm sm:text-xl text-rose-700 hover:underline'> Sign in</li>
             )}
           </Link>
         </ul>
