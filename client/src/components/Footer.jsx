@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -18,6 +18,10 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/rishav97/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
             <i className="fab fa-linkedin-in"></i>
           </a>
+          
+          {/* <a href="https://x.com/Risu552" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+          <i className="fab fa-envelope"></i>
+          </a> */}
         </div>
         
         <div className="mb-4">
