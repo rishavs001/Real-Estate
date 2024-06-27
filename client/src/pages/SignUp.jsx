@@ -46,35 +46,35 @@ export default function SignUp() {
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='text'
-          placeholder='username'
-          className='border p-3 rounded-lg'
+          placeholder='Username'
+          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
           id='username'
           onChange={handleChange}
         />
         <input
           type='email'
-          placeholder='email'
-          className='border p-3 rounded-lg'
+          placeholder='Email'
+          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
           id='email'
           onChange={handleChange}
         />
         <input
           type='password'
-          placeholder='password'
-          className='border p-3 rounded-lg'
+          placeholder='Password'
+          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
           id='password'
           onChange={handleChange}
         />
 
         <button
           disabled={loading}
-          className='bg-rose-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-rose-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
         <OAuth/>
       </form>
-      <div className='flex gap-2 mt-5'>
+      <div className='flex gap-2 mb-16 mt-5'>
         <p>Have an account?</p>
         <Link to={'/sign-in'}>
           <span className='text-blue-700'>Sign in</span>
