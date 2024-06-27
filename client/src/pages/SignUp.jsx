@@ -46,22 +46,22 @@ export default function SignUp() {
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='text'
-          placeholder='username'
-          className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+          placeholder='Username'
+          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
           id='username'
           onChange={handleChange}
         />
         <input
           type='email'
-          placeholder='email'
-          className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+          placeholder='Email'
+          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
           id='email'
           onChange={handleChange}
         />
         <input
           type='password'
-          placeholder='password'
-          className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+          placeholder='Password'
+          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
           id='password'
           onChange={handleChange}
         />
@@ -74,7 +74,7 @@ export default function SignUp() {
         </button>
         <OAuth/>
       </form>
-      <div className='flex gap-2 mt-5'>
+      <div className='flex gap-2 mb-16 mt-5'>
         <p>Have an account?</p>
         <Link to={'/sign-in'}>
           <span className='text-blue-700'>Sign in</span>

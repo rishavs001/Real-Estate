@@ -196,7 +196,7 @@ export default function Profile() {
           placeholder='username'
           defaultValue={currentUser.username}
           id='username'
-          className='border p-3 rounded-lg'
+          className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
           onChange={handleChange}
         />
         <input
@@ -204,7 +204,7 @@ export default function Profile() {
           placeholder='email'
           id='email'
           defaultValue={currentUser.email}
-          className='border p-3 rounded-lg'
+          className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
           onChange={handleChange}
         />
         <input
@@ -212,7 +212,7 @@ export default function Profile() {
           placeholder='password'
           onChange={handleChange}
           id='password'
-          className='border p-3 rounded-lg'
+          className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
         />
         <button
           disabled={loading}

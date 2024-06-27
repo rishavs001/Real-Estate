@@ -164,7 +164,7 @@ export default function CreateListing() {
           <input
             type='text'
             placeholder='Name'
-            className=' bg-rose-50  border border-rose-200 p-3 rounded-2xl  '
+            className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
             id='name'
             maxLength='62'
             minLength='10'
@@ -175,7 +175,7 @@ export default function CreateListing() {
           <textarea
             type='text'
             placeholder='Description'
-            className='bg-rose-50  border border-rose-200 p-3 rounded-2xl  '
+            className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
             id='description'
             required
             onChange={handleChange}
@@ -184,7 +184,7 @@ export default function CreateListing() {
           <input 
             type='text'
             placeholder='Address'
-            className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+            className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
             id='address'
             required
             onChange={handleChange}
@@ -195,7 +195,7 @@ export default function CreateListing() {
               <input
                 type='checkbox'
                 id='sale'
-                className='w-5 bg-rose-50  '
+                className='w-5'
                 onChange={handleChange}
                 checked={formData.type === 'sale'}
               />
@@ -205,7 +205,7 @@ export default function CreateListing() {
               <input
                 type='checkbox'
                 id='rent'
-                className='w-5'
+                className='w-5 '
                 onChange={handleChange}
                 checked={formData.type === 'rent'}
               />
@@ -250,7 +250,7 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+                className='border bg-rose-50 border-rose-600 p-3 rounded-3xl  '
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
@@ -263,7 +263,7 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+                className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
@@ -274,9 +274,9 @@ export default function CreateListing() {
                 type='number'
                 id='regularPrice'
                 min='1000'
-                max='10000000'
+                max='100000000000'
                 required
-                className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+                className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
@@ -293,9 +293,9 @@ export default function CreateListing() {
                   type='number'
                   id='discountPrice'
                   min='0'
-                  max='10000000'
+                  max='100000000000'
                   required
-                  className='bg-rose-50  border border-rose-200 p-3 rounded-2xl'
+                  className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
@@ -320,7 +320,7 @@ export default function CreateListing() {
           <div className='flex gap-4'>
             <input
               onChange={(e) => setFiles(e.target.files)}
-              className='p-3 border border-green-700 rounded-xl w-full'
+              className='p-3 border border-green-700 rounded-3xl w-full'
               type='file'
               id='images'
               accept='image/*'
@@ -342,7 +342,7 @@ export default function CreateListing() {
             formData.imageUrls.map((url, index) => (
               <div
                 key={url}
-                className='flex justify-between p-3 border border-rose-700 rounded-3xl items-center'
+                className='flex justify-between p-3 border items-center'
               >
                 <img
                   src={url}
@@ -352,7 +352,7 @@ export default function CreateListing() {
                 <button
                   type='button'
                   onClick={() => handleRemoveImage(index)}
-                  className='p-3 text-red-700 rounded-lg uppercase hover:opacity-75'
+                  className='p-3 text-red-700 rounded-3xl uppercase hover:opacity-75'
                 >
                   Delete
                 </button>
@@ -360,7 +360,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className='p-3 bg-rose-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+            className='p-3 bg-rose-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Creating...' : 'Create listing'}
           </button>
