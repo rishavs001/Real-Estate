@@ -5,9 +5,9 @@ export default function About() {
     <div className='bg-rose-100 shadow-md h-full'>
         <div className='py-20 px-4 max-w-6xl mx-auto'>
       <h1 className='text-3xl font-bold mb-4 text-rose-800'>About NayaNivas</h1>
-      <p className='mb-4 text-rose-500'>Welcome to GharDekho, your ultimate destination for all your property needs. Whether you're looking to buy, sell, or rent a property, our platform provides a seamless and efficient experience for both buyers and sellers.
+      <p className='mb-4 text-rose-500'>Welcome to NayaNivas, your ultimate destination for all your property needs. Whether you're looking to buy, sell, or rent a property, our platform provides a seamless and efficient experience for both buyers and sellers.
 <br/>
-At GharDekho, we understand that finding the perfect property or selling one can be a daunting task. That's why we've designed our website to be user-friendly and comprehensive, catering to all your real estate needs under one roof.</p>
+At NayaNivas, we understand that finding the perfect property or selling one can be a daunting task. That's why we've designed our website to be user-friendly and comprehensive, catering to all your real estate needs under one roof.</p>
 
 <h1 className='text-3xl font-bold mb-4 text-rose-800'>What We Offer:</h1>
 <ul className='mb-4 text-rose-500'>

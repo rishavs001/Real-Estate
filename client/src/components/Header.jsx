@@ -48,12 +48,12 @@ export default function Header() {
         </form>
         <ul className='flex gap-4'>
           <Link to='/'>
-            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:underline'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:text-pink-900'>
               Home
             </li>
           </Link>
           <Link to='/about'>
-            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:underline'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:text-pink-900'>
               About
             </li>
           </Link>
@@ -65,7 +65,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className='font-bold text-sm sm:text-xl text-rose-700 hover:underline'> Sign in</li>
+              <li className='font-bold text-sm sm:text-xl text-rose-700 hover:text-pink-900'> Sign in</li>
             )}
           </Link>
         </ul>

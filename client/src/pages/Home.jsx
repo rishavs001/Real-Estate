@@ -60,7 +60,7 @@ export default function Home() {
           <br />
           We have a wide range of properties for you to choose from.
           <br/>
-          So, unlock Your Dream Property - Rent, Sell, and Connect with Ease in One Place !!
+          So, unlock Your Dream Property - Buy, Rent, Sell, and Connect with Ease in One Place !!
         </div>
         <Link
           to={'/search'}
