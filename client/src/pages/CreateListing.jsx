@@ -320,7 +320,7 @@ export default function CreateListing() {
           <div className='flex gap-4'>
             <input
               onChange={(e) => setFiles(e.target.files)}
-              className='p-3 border border-green-700 rounded-3xl w-full'
+              className='p-3 border border-green-700 border-green-700 rounded-3xl w-full'
               type='file'
               id='images'
               accept='image/*'
@@ -342,7 +342,7 @@ export default function CreateListing() {
             formData.imageUrls.map((url, index) => (
               <div
                 key={url}
-                className='flex justify-between p-3 border items-center'
+                className='flex justify-between p-3 border border-rose-700 items-center'
               >
                 <img
                   src={url}

@@ -64,13 +64,13 @@ export default function SignIn() {
 
         <button
           disabled={loading}
-          className='bg-rose-700 text-white p-5 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-rose-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>
         <OAuth/>
       </form>
-      <div className='flex gap-2 pb-5 mb-14 mt-5'>
+      <div className='flex gap-2 pb-8 mb-14 mt-5'>
         <p>Dont have an account?</p>
         <Link to={'/sign-up'}>
           <span className='text-blue-700'>Sign up</span>
