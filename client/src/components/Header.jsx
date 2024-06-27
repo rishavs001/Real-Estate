@@ -46,7 +46,7 @@ export default function Header() {
             <FaSearch className='text-rose-500' />
           </button>
         </form>
-        <ul className='flex gap-4'>
+        <ul className='flex gap-10 items-center'>
           <Link to='/'>
             <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:text-pink-900'>
               Home
@@ -60,15 +60,16 @@ export default function Header() {
           <Link to='/profile'>
             {currentUser ? (
               <img
-                className='rounded-full h-7 w-7 object-cover'
+                className='rounded-full h-9 w-9 object-cover'
                 src={currentUser.avatar}
                 alt='profile'
               />
             ) : (
-              <li className='font-bold text-sm sm:text-xl text-rose-700 hover:text-pink-900'> Sign in</li>
+              <button className='font-bold border text-slate-100 bg-rose-900 border-rose-800 p-2 rounded-lg text-sm sm:text-xl text-rose-700 hover:text-slate-200'> Sign in</button>
             )}
           </Link>
         </ul>
+       
       </div>
     </header>
   );
