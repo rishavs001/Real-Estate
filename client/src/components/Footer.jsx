@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin, FaRegEnvelope } from "
 
 const Footer = () => {
   return (
-    <footer className="bg-rose-500 shadow-md text-white py-8">
+    <footer className="bg-lime-500 shadow-md text-white py-8">
       <div className="container mx-auto  text-center">
         <div className="flex justify-center space-x-4 mb-4">
           <a href="https://www.facebook.com/rishav.shah.148" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
@@ -23,7 +23,9 @@ const Footer = () => {
             <FaRegEnvelope    />
           </a>
           
-          
+          {/* <a href="https://x.com/Risu552" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+          <i className="fab fa-envelope"></i>
+          </a> */}
         </div>
         
         <div className="mb-1">

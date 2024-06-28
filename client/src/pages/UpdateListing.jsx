@@ -170,8 +170,8 @@ export default function CreateListing() {
     }
   };
   return (
-  <div className='bg-rose-100 shadow-md h-full'>
-<main className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'>
+  <div className='bg-lime-100 shadow-md h-full'>
+<main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
         Update a Listing
       </h1>
@@ -180,7 +180,7 @@ export default function CreateListing() {
           <input
             type='text'
             placeholder='Name'
-            className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+            className='border p-3 rounded-lg'
             id='name'
             maxLength='62'
             minLength='10'
@@ -191,7 +191,7 @@ export default function CreateListing() {
           <textarea
             type='text'
             placeholder='Description'
-            className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+            className='border p-3 rounded-lg'
             id='description'
             required
             onChange={handleChange}
@@ -200,7 +200,7 @@ export default function CreateListing() {
           <input
             type='text'
             placeholder='Address'
-            className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+            className='border p-3 rounded-lg'
             id='address'
             required
             onChange={handleChange}
@@ -266,7 +266,7 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+                className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
@@ -279,7 +279,7 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+                className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
@@ -292,7 +292,7 @@ export default function CreateListing() {
                 min='1000'
                 max='10000000'
                 required
-                className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+                className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
@@ -311,7 +311,7 @@ export default function CreateListing() {
                   min='0'
                   max='10000000'
                   required
-                  className='border  bg-rose-50 border-rose-600 p-3 rounded-3xl'
+                  className='p-3 border border-gray-300 rounded-lg'
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
@@ -335,7 +335,7 @@ export default function CreateListing() {
           <div className='flex gap-4'>
             <input
               onChange={(e) => setFiles(e.target.files)}
-              className='p-3 border border-gray-300 border-green-700 rounded-2xl w-full'
+              className='p-3 border border-gray-300 rounded w-full'
               type='file'
               id='images'
               accept='image/*'
@@ -357,7 +357,7 @@ export default function CreateListing() {
             formData.imageUrls.map((url, index) => (
               <div
                 key={url}
-                className='flex justify-between p-3 border border-rose-700 rounded-3xl items-center'
+                className='flex justify-between p-3 border items-center'
               >
                 <img
                   src={url}
@@ -367,7 +367,7 @@ export default function CreateListing() {
                 <button
                   type='button'
                   onClick={() => handleRemoveImage(index)}
-                  className='p-3 text-red-700 rounded-3xl bg-rose-400 uppercase hover:opacity-75'
+                  className='p-3 text-red-700 rounded-3xl bg-lime-400 uppercase hover:opacity-75'
                 >
                   Delete
                 </button>
@@ -375,7 +375,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className='p-3 bg-rose-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+            className='p-3 bg-lime-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Updating...' : 'Update listing'}
           </button>

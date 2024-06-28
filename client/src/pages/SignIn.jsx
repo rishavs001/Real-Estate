@@ -43,34 +43,34 @@ export default function SignIn() {
     }
   };
   return (
-    <div className='bg-rose-100 shadow-md h-full'>
+    <div className='bg-lime-100 shadow-md h-full'>
     <div className='p-3 pt-14 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='Email'
           placeholder='Email'
-          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
+          className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
           id='email'
           onChange={handleChange}
         />
         <input
           type='Password'
           placeholder='Password'
-          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
+          className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
           id='password'
           onChange={handleChange}
         />
 
         <button
           disabled={loading}
-          className='bg-rose-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-lime-700 text-white p-5 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>
         <OAuth/>
       </form>
-      <div className='flex gap-2 pb-8 mb-14 mt-5'>
+      <div className='flex gap-2 pb-5 mb-14 mt-5'>
         <p>Dont have an account?</p>
         <Link to={'/sign-up'}>
           <span className='text-blue-700'>Sign up</span>

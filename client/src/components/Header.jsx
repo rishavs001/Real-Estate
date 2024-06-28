@@ -23,17 +23,17 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-rose-400 shadow-md'>
+    <header className='bg-lime-400 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
-          <h1 className='font-bold text-sm sm:text-2xl flex flex-wrap'>
-            <span className='text-amber-200'>Naya </span>
-            <span className='text-rose-700'>Nivas</span>
+          <h1 className='font-bold text-sm  sm:text-2xl flex flex-wrap'>
+            <span className='text-amber-600'>Naya </span>
+            <span className='text-lime-700'>Nivas</span>
           </h1>
         </Link>
         <form
           onSubmit={handleSubmit}
-          className='bg-rose-100 p-3 rounded-2xl flex items-center'
+          className='bg-lime-100 p-3 rounded-2xl flex items-center'
         >
           <input
             type='text'
@@ -43,33 +43,32 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <FaSearch className='text-rose-500' />
+            <FaSearch className='text-lime-500' />
           </button>
         </form>
-        <ul className='flex gap-10 items-center'>
+        <ul className='flex  items-center gap-4'>
           <Link to='/'>
-            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:text-pink-900'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-lime-700 hover:text-lime-900'>
               Home
             </li>
           </Link>
           <Link to='/about'>
-            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-rose-700 hover:text-pink-900'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-lime-700 hover:text-lime-900'>
               About
             </li>
           </Link>
           <Link to='/profile'>
             {currentUser ? (
               <img
-                className='rounded-full h-9 w-9 object-cover'
+                className='rounded-full h-7 w-7 object-cover'
                 src={currentUser.avatar}
                 alt='profile'
               />
             ) : (
-              <button className='font-bold border text-slate-100 bg-rose-900 border-rose-800 p-2 rounded-lg text-sm sm:text-xl text-rose-700 hover:text-slate-200'> Sign in</button>
+              <button className='font-bold border text-slate-200 p-2 rounded-xl bg-lime-600 text-sm sm:text-xl text-lime-700 hover:text-slate-300'> Sign in</button>
             )}
           </Link>
         </ul>
-       
       </div>
     </header>
   );

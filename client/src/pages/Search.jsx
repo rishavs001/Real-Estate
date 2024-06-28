@@ -128,7 +128,7 @@ export default function Search() {
     setListings([...listings, ...data]);
   };
   return (
-    <div className='bg-rose-100 shadow-md'>
+    <div className='bg-lime-100 shadow-md'>
 <div className='flex flex-col md:flex-row'>
       <div className='p-7  border-b-2 md:border-r-2 md:min-h-full'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
@@ -140,7 +140,7 @@ export default function Search() {
               type='text'
               id='searchTerm'
               placeholder='Search...'
-              className='border bg-rose-50 border-rose-600 p-3 rounded-3xl w-full'
+              className='border bg-lime-50 border-lime-600 p-3 rounded-3xl w-full'
               value={sidebardata.searchTerm}
               onChange={handleChange}
             />
@@ -217,7 +217,7 @@ export default function Search() {
               onChange={handleChange}
               defaultValue={'created_at_desc'}
               id='sort_order'
-              className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
+              className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
             >
               <option value='regularPrice_desc'>Price high to low</option>
               <option value='regularPrice_asc'>Price low to hight</option>
@@ -225,21 +225,21 @@ export default function Search() {
               <option value='createdAt_asc'>Oldest</option>
             </select>
           </div>
-          <button className='bg-rose-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
+          <button className='bg-lime-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
             Search
           </button>
         </form>
       </div>
       <div className='flex-1'>
-        <h1 className='text-3xl font-semibold border-b p-3 text-rose-700 mt-5'>
+        <h1 className='text-3xl font-semibold border-b p-3 text-lime-700 mt-5'>
           Listing results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
           {!loading && listings.length === 0 && (
-            <p className='text-xl text-rose-700'>No listing found!</p>
+            <p className='text-xl text-lime-700'>No listing found!</p>
           )}
           {loading && (
-            <p className='text-xl text-rose-700 text-center w-full'>
+            <p className='text-xl text-lime-700 text-center w-full'>
               Loading...
             </p>
           )}

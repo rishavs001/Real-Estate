@@ -51,7 +51,7 @@ export default function Listing() {
   }, [params.listingId]);
 
   return (
-    <div className='bg-rose-100 shadow-md'>
+    <div className='bg-lime-100 shadow-md'>
    <main>
       {loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
       {error && (
@@ -72,9 +72,9 @@ export default function Listing() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className='fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-rose-100 cursor-pointer'>
+          <div className='fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-lime-100 cursor-pointer'>
             <FaShare
-              className='text-rose-500'
+              className='text-lime-500'
               onClick={() => {
                 navigator.clipboard.writeText(window.location.href);
                 setCopied(true);
@@ -85,7 +85,7 @@ export default function Listing() {
             />
           </div>
           {copied && (
-            <p className='fixed top-[23%] right-[5%] z-10 rounded-md bg-rose-100 p-2'>
+            <p className='fixed top-[23%] right-[5%] z-10 rounded-md bg-lime-100 p-2'>
               Link copied!
             </p>
           )}
@@ -97,7 +97,7 @@ export default function Listing() {
                 : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / month'}
             </p>
-            <p className='flex items-center mt-6 gap-2 text-rose-600  text-sm'>
+            <p className='flex items-center mt-6 gap-2 text-lime-600  text-sm'>
               <FaMapMarkerAlt className='text-green-700' />
               {listing.address}
             </p>
@@ -111,7 +111,7 @@ export default function Listing() {
                 </p>
               )}
             </div>
-            <p className='text-rose-800'>
+            <p className='text-lime-800'>
               <span className='font-semibold text-black'>Description - </span>
               {listing.description}
             </p>
@@ -140,7 +140,7 @@ export default function Listing() {
             {currentUser && listing.userRef !== currentUser._id && !contact && (
               <button
                 onClick={() => setContact(true)}
-                className='bg-rose-700 text-white rounded-lg uppercase hover:opacity-95 p-3'
+                className='bg-lime-700 text-white rounded-lg uppercase hover:opacity-95 p-3'
               >
                 Contact landlord
               </button>

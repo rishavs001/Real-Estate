@@ -40,35 +40,35 @@ export default function SignUp() {
     }
   };
   return (
-    <div className='bg-rose-100 shadow-md h-full'>
+    <div className='bg-lime-100 shadow-md h-full'>
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='text'
           placeholder='Username'
-          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
+          className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
           id='username'
           onChange={handleChange}
         />
         <input
           type='email'
           placeholder='Email'
-          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
+          className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
           id='email'
           onChange={handleChange}
         />
         <input
           type='password'
           placeholder='Password'
-          className='border bg-rose-50 border-rose-600 p-3 rounded-3xl'
+          className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
           id='password'
           onChange={handleChange}
         />
 
         <button
           disabled={loading}
-          className='bg-rose-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-lime-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
