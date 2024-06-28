@@ -26,7 +26,7 @@ export default function ListingItem({ listing }) {
           <p className='text-sm text-gray-600 line-clamp-2'>
             {listing.description}
           </p>
-          <p className='text-lime-500 mt-2 font-semibold '>
+          <p className='text-lime-700 mt-2 font-semibold '>
           ₹
             {listing.offer
               ? listing.discountPrice.toLocaleString('en-US')
@@ -39,7 +39,7 @@ export default function ListingItem({ listing }) {
                 ? `${listing.bedrooms} beds `
                 : `${listing.bedrooms} bed `}
             </div>
-            <div className='font-bold text-xs'>
+            <div className='font-bold  text-xs'>
               {listing.bathrooms > 1
                 ? `${listing.bathrooms} baths `
                 : `${listing.bathrooms} bath `}
