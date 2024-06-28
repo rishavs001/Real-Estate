@@ -8,6 +8,7 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast, Toaster } from 'react-hot-toast';
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
@@ -65,14 +66,17 @@ export default function CreateListing() {
           });
           setImageUploadError(false);
           setUploading(false);
+          toast.success('Images uploaded successfully');
         })
         .catch((err) => {
           setImageUploadError('Image upload failed (2 mb max per image)');
           setUploading(false);
+          toast.error('Image upload failed');
         });
     } else {
       setImageUploadError('You can only upload 6 images per listing');
       setUploading(false);
+      toast.error('You can only upload 6 images per listing');
     }
   };
 
@@ -106,6 +110,7 @@ export default function CreateListing() {
       ...formData,
       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
     });
+    toast.success('Image removed');
   };
 
   const handleChange = (e) => {
@@ -142,10 +147,16 @@ export default function CreateListing() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (formData.imageUrls.length < 1)
-        return setError('You must upload at least one image');
-      if (+formData.regularPrice < +formData.discountPrice)
-        return setError('Discount price must be lower than regular price');
+      if (formData.imageUrls.length < 1) {
+        setError('You must upload at least one image');
+        toast.error('You must upload at least one image');
+        return;
+      }
+      if (+formData.regularPrice < +formData.discountPrice) {
+        setError('Discount price must be lower than regular price');
+        toast.error('Discount price must be lower than regular price');
+        return;
+      }
       setLoading(true);
       setError(false);
       const res = await fetch(`/api/listing/update/${params.listingId}`, {
@@ -162,13 +173,18 @@ export default function CreateListing() {
       setLoading(false);
       if (data.success === false) {
         setError(data.message);
+        toast.error(data.message);
+      } else {
+        toast.success('Listing updated successfully');
+        navigate(`/listing/${data._id}`);
       }
-      navigate(`/listing/${data._id}`);
     } catch (error) {
       setError(error.message);
+      toast.error(error.message);
       setLoading(false);
     }
   };
+
   return (
   <div className='bg-lime-100 shadow-md h-full'>
 <main className='p-3 max-w-4xl mx-auto'>

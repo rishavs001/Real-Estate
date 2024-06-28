@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
 import { useRef, useState, useEffect } from 'react';
 import {
   getDownloadURL,
@@ -57,10 +58,12 @@ export default function Profile() {
       },
       (error) => {
         setFileUploadError(true);
+        toast.error('Error uploading image (image must be less than 2 mb)');
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-          setFormData({ ...formData, avatar: downloadURL })
+          setFormData({ ...formData, avatar: downloadURL }),
+        toast.success('Image successfully uploaded!')
         );
       }
     );
@@ -84,13 +87,16 @@ export default function Profile() {
       const data = await res.json();
       if (data.success === false) {
         dispatch(updateUserFailure(data.message));
+        toast.error('Error updating profile');
         return;
       }
 
       dispatch(updateUserSuccess(data));
       setUpdateSuccess(true);
+      toast.success('Profile updated successfully');
     } catch (error) {
       dispatch(updateUserFailure(error.message));
+      toast.error('Error updating profile');
     }
   };
 
@@ -103,11 +109,14 @@ export default function Profile() {
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data.message));
+        toast.error('Error deleting account');
         return;
       }
       dispatch(deleteUserSuccess(data));
+      toast.success('Account deleted successfully');
     } catch (error) {
       dispatch(deleteUserFailure(error.message));
+      toast.error('Error deleting account');
     }
   };
 
@@ -118,11 +127,14 @@ export default function Profile() {
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data.message));
+        toast.error('Error signing out');
         return;
       }
       dispatch(deleteUserSuccess(data));
+      toast.success('Signed out successfully');
     } catch (error) {
       dispatch(deleteUserFailure(data.message));
+      toast.error('Error signing out');
     }
   };
 
@@ -133,12 +145,15 @@ export default function Profile() {
       const data = await res.json();
       if (data.success === false) {
         setShowListingsError(true);
+        toast.error('Error showing listings');
         return;
       }
 
       setUserListings(data);
+      toast.success('Listings loaded successfully');
     } catch (error) {
       setShowListingsError(true);
+      toast.error('Error showing listings');
     }
   };
 
@@ -150,14 +165,17 @@ export default function Profile() {
       const data = await res.json();
       if (data.success === false) {
         console.log(data.message);
+        toast.error('Error deleting listing');
         return;
       }
 
       setUserListings((prev) =>
         prev.filter((listing) => listing._id !== listingId)
       );
+      toast.success('Listing deleted successfully');
     } catch (error) {
       console.log(error.message);
+      toast.error('Error deleting listing');
     }
   };
   return (
@@ -239,9 +257,9 @@ export default function Profile() {
       </div>
 
       <p className='text-red-700 mt-5'>{error ? error : ''}</p>
-      <p className='text-green-700 mt-5'>
+      {/* <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
-      </p>
+      </p> */}
       <button onClick={handleShowListings} className='text-green-700 w-full hover:text-green-500'>
         Show Listings
       </button>

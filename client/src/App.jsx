@@ -12,9 +12,12 @@ import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
 
+import toast, { Toaster } from 'react-hot-toast';
+
 export default function App() {
   return (
     <BrowserRouter>
+    <div><Toaster/></div>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

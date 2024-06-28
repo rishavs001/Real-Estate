@@ -29,6 +29,7 @@ export default function OAuth() {
       });
       const data = await res.json();
       dispatch(signInSuccess(data));
+      
       navigate('/');
     } catch (error) {
       console.log('could not sign in with google', error);
@@ -41,9 +42,7 @@ export default function OAuth() {
       className='bg-red-700 text-white p-3 rounded-3xl uppercase hover:opacity-95'
     >
     <div className='flex  gap-4 items-center justify-center'>
-    <FaGoogle className='text-2xl'/>
-
-Continue with google
+    <FaGoogle className='text-2xl'/>Continue with google
     </div>
     
     </button>

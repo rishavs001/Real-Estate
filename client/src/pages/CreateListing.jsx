@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from 'firebase/storage';
+import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
@@ -31,7 +27,7 @@ export default function CreateListing() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(formData);
+
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
@@ -49,14 +45,17 @@ export default function CreateListing() {
           });
           setImageUploadError(false);
           setUploading(false);
+          toast.success('Images uploaded successfully!');
         })
         .catch((err) => {
           setImageUploadError('Image upload failed (2 mb max per image)');
           setUploading(false);
+          toast.error('Image upload failed');
         });
     } else {
       setImageUploadError('You can only upload 6 images per listing');
       setUploading(false);
+      toast.error('You can only upload 6 images per listing');
     }
   };
 
@@ -69,8 +68,7 @@ export default function CreateListing() {
       uploadTask.on(
         'state_changed',
         (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log(`Upload is ${progress}% done`);
         },
         (error) => {
@@ -126,10 +124,14 @@ export default function CreateListing() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (formData.imageUrls.length < 1)
+      if (formData.imageUrls.length < 1) {
+        toast.error('You must upload at least one image');
         return setError('You must upload at least one image');
-      if (+formData.regularPrice < +formData.discountPrice)
+      }
+      if (+formData.regularPrice < +formData.discountPrice) {
+        toast.error('Discount price must be lower than regular price');
         return setError('Discount price must be lower than regular price');
+      }
       setLoading(true);
       setError(false);
       const res = await fetch('/api/listing/create', {
@@ -146,13 +148,18 @@ export default function CreateListing() {
       setLoading(false);
       if (data.success === false) {
         setError(data.message);
+        toast.error(data.message);
+      } else {
+        toast.success('Listing created successfully');
+        navigate(`/listing/${data._id}`);
       }
-      navigate(`/listing/${data._id}`);
     } catch (error) {
       setError(error.message);
       setLoading(false);
+      toast.error(error.message);
     }
   };
+
   return (
     <div className='bg-lime-100 shadow-md h-full'>
   <main className='p-3 max-w-4xl mx-auto'>

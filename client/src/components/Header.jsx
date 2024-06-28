@@ -65,7 +65,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <button className='font-bold border text-slate-200 p-2 rounded-xl bg-lime-600 text-sm sm:text-xl shadow-inner border-lime-600 hover:text-slate-300'> Sign in</button>
+              <button className='font-bold border text-white p-2 rounded-xl bg-lime-600 text-sm sm:text-xl shadow-inner border-lime-600 hover:text-slate-200'> Sign in</button>
             )}
           </Link>
         </ul>
