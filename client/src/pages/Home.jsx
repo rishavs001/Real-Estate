@@ -46,11 +46,11 @@ export default function Home() {
     fetchOfferListings();
   }, []);
   return (
-    <div className='bg-lime-100 pb-3 shadow-md h-full'>
+    <div className='bg-stone-100 pb-3 shadow-md h-full'>
       {/* top */}
       <div className='flex flex-col gap-6 p-20 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-lime-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-lime-500'>perfect</span>
+        <h1 className='text-stone-700 font-bold text-3xl lg:text-6xl'>
+          Find your next <span className='text-stone-500'>perfect</span>
           <br />
           place with ease
         </h1>
@@ -94,7 +94,7 @@ export default function Home() {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-lime-600'>Recent offers</h2>
+              <h2 className='text-2xl font-semibold text-stone-600'>Recent offers</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -107,7 +107,7 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-lime-600'>Recent places for rent</h2>
+              <h2 className='text-2xl font-semibold text-stone-600'>Recent places for rent</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -120,7 +120,7 @@ export default function Home() {
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-lime-600'>Recent places for sale</h2>
+              <h2 className='text-2xl font-semibold text-stone-600'>Recent places for sale</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
             </div>
             <div className='flex flex-wrap gap-4'>

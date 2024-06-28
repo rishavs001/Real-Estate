@@ -179,7 +179,7 @@ export default function Profile() {
     }
   };
   return (
-    <div className=' bg-lime-100 shadow-md h-full'>
+    <div className=' bg-stone-100 shadow-md h-full'>
   <div className=' p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
@@ -202,7 +202,7 @@ export default function Profile() {
               Error Image upload (image must be less than 2 mb)
             </span>
           ) : filePerc > 0 && filePerc < 100 ? (
-            <span className='text-lime-700'>{`Uploading ${filePerc}%`}</span>
+            <span className='text-stone-700'>{`Uploading ${filePerc}%`}</span>
           ) : filePerc === 100 ? (
             <span className='text-green-700'>Image successfully uploaded!</span>
           ) : (
@@ -214,7 +214,7 @@ export default function Profile() {
           placeholder='username'
           defaultValue={currentUser.username}
           id='username'
-          className='border  bg-lime-50 border-lime-600 p-3 rounded-3xl'
+          className='border  bg-stone-50 border-stone-600 p-3 rounded-3xl'
           onChange={handleChange}
         />
         <input
@@ -222,7 +222,7 @@ export default function Profile() {
           placeholder='email'
           id='email'
           defaultValue={currentUser.email}
-          className='border  bg-lime-50 border-lime-600 p-3 rounded-3xl'
+          className='border  bg-stone-50 border-stone-600 p-3 rounded-3xl'
           onChange={handleChange}
         />
         <input
@@ -230,11 +230,11 @@ export default function Profile() {
           placeholder='password'
           onChange={handleChange}
           id='password'
-          className='border  bg-lime-50 border-lime-600 p-3 rounded-3xl'
+          className='border  bg-stone-50 border-stone-600 p-3 rounded-3xl'
         />
         <button
           disabled={loading}
-          className='bg-lime-700 text-white rounded-3xl p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-stone-700 text-white rounded-3xl p-3 uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
@@ -285,7 +285,7 @@ export default function Profile() {
                 />
               </Link>
               <Link
-                className='text-lime-700 font-semibold  hover:underline truncate flex-1'
+                className='text-stone-700 font-semibold  hover:underline truncate flex-1'
                 to={`/listing/${listing._id}`}
               >
                 <p>{listing.name}</p>

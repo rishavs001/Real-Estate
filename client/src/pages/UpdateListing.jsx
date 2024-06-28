@@ -186,7 +186,7 @@ export default function CreateListing() {
   };
 
   return (
-  <div className='bg-lime-100 shadow-md h-full'>
+  <div className='bg-stone-100 shadow-md h-full'>
 <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
         Update a Listing
@@ -383,7 +383,7 @@ export default function CreateListing() {
                 <button
                   type='button'
                   onClick={() => handleRemoveImage(index)}
-                  className='p-3 text-red-700 rounded-3xl bg-lime-400 uppercase hover:opacity-75'
+                  className='p-3 text-red-700 rounded-3xl bg-stone-400 uppercase hover:opacity-75'
                 >
                   Delete
                 </button>
@@ -391,7 +391,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className='p-3 bg-lime-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+            className='p-3 bg-stone-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Updating...' : 'Update listing'}
           </button>

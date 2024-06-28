@@ -23,17 +23,17 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-lime-400 shadow-md'>
+    <header className='bg-stone-500 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <h1 className='font-bold text-sm  sm:text-2xl flex flex-wrap'>
             <span className='text-amber-600'>Naya </span>
-            <span className='text-lime-700'>Nivas</span>
+            <span className='text-neutral-800'>Nivas</span>
           </h1>
         </Link>
         <form
           onSubmit={handleSubmit}
-          className='bg-lime-100 p-3 rounded-2xl flex items-center'
+          className='bg-stone-100 p-3 rounded-2xl flex items-center'
         >
           <input
             type='text'
@@ -43,17 +43,17 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <FaSearch className='text-lime-500' />
+            <FaSearch className='text-stone-500' />
           </button>
         </form>
         <ul className='flex  items-center gap-4'>
           <Link to='/'>
-            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-lime-700 hover:text-lime-900'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-stone-800 hover:text-stone-900'>
               Home
             </li>
           </Link>
           <Link to='/about'>
-            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-lime-700 hover:text-lime-900'>
+            <li className='font-bold text-sm sm:text-xl hidden sm:inline text-stone-800 hover:text-stone-900'>
               About
             </li>
           </Link>
@@ -65,7 +65,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <button className='font-bold border text-white p-2 rounded-xl bg-lime-600 text-sm sm:text-xl shadow-inner border-lime-600 hover:text-slate-200'> Sign in</button>
+              <button className='font-bold border text-white p-2 rounded-xl bg-stone-800 text-sm sm:text-xl shadow-inner border-stone-600 hover:text-stone-200'> Sign in</button>
             )}
           </Link>
         </ul>

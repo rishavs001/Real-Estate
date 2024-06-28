@@ -161,7 +161,7 @@ export default function CreateListing() {
   };
 
   return (
-    <div className='bg-lime-100 shadow-md h-full'>
+    <div className='bg-stone-100 shadow-md h-full'>
   <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
         Create a Listing
@@ -171,7 +171,7 @@ export default function CreateListing() {
           <input
             type='text'
             placeholder='Name'
-            className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+            className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
             id='name'
             maxLength='62'
             minLength='10'
@@ -182,7 +182,7 @@ export default function CreateListing() {
           <textarea
             type='text'
             placeholder='Description'
-            className='border  bg-lime-50 border-lime-600 p-3 rounded-3xl'
+            className='border  bg-stone-50 border-stone-600 p-3 rounded-3xl'
             id='description'
             required
             onChange={handleChange}
@@ -191,7 +191,7 @@ export default function CreateListing() {
           <input 
             type='text'
             placeholder='Address'
-            className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+            className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
             id='address'
             required
             onChange={handleChange}
@@ -257,7 +257,7 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='border bg-lime-50 border-lime-600 p-3 rounded-3xl  '
+                className='border bg-stone-50 border-stone-600 p-3 rounded-3xl  '
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
@@ -270,7 +270,7 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+                className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
@@ -283,7 +283,7 @@ export default function CreateListing() {
                 min='1000'
                 max='100000000000'
                 required
-                className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+                className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
@@ -302,7 +302,7 @@ export default function CreateListing() {
                   min='0'
                   max='100000000000'
                   required
-                  className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+                  className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
@@ -367,7 +367,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className='p-3 bg-lime-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+            className='p-3 bg-stone-700 text-white rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Creating...' : 'Create listing'}
           </button>

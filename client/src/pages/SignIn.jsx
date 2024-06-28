@@ -50,27 +50,27 @@ export default function SignIn() {
   };
 
   return (
-    <div className='bg-lime-100 shadow-md h-full'>
+    <div className='bg-stone-100 shadow-md h-full'>
       <div className='p-3 pt-14 max-w-lg mx-auto'>
         <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
           <input
             type='Email'
             placeholder='Email'
-            className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+            className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
             id='email'
             onChange={handleChange}
           />
           <input
             type='Password'
             placeholder='Password'
-            className='border bg-lime-50 border-lime-600 p-3 rounded-3xl'
+            className='border bg-stone-50 border-stone-600 p-3 rounded-3xl'
             id='password'
             onChange={handleChange}
           />
           <button 
             disabled={loading}
-            className='bg-lime-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
+            className='bg-stone-700 text-white p-3 rounded-3xl uppercase hover:opacity-95 disabled:opacity-80'
           >
             {loading ? 'Loading...' : 'Sign In'}
           </button>
