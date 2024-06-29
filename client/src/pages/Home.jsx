@@ -49,11 +49,9 @@ export default function Home() {
     <div className='bg-stone-100 pb-3 shadow-md h-full'>
       {/* top */}
       <div className='flex flex-col gap-6 p-20 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-stone-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-stone-500'>perfect</span>
-          <br />
-          place with ease
-        </h1>
+      <h1 className='text-stone-700 font-bold text-3xl lg:text-6xl font-serif'>
+          Discover your <span className='text-stone-500'>dream</span> home effortlessly
+      </h1>
         <div className='text-cyan-700 font-medium font-sans text-xs sm:text-sm'>
           NayaNivas is the best place to find your next perfect place to
           live.
