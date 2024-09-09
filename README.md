@@ -15,8 +15,8 @@ You can view the live site here: [Naya Nivas Live Demo](https://nayanivas-rent-s
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
-- **State Management**: Redux (if applicable)
-- **Styling**: CSS/Bootstrap (or any other library you used)
+- **State Management**: Redux
+- **Styling**: CSS/Tailwind 
 
 ## Installation
 
