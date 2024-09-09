@@ -26,18 +26,28 @@ To run the project locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/naya-nivas.git
    cd naya-nivas
+   
 2 Install server-side dependencies:
-    npm install
+
+       npm install
+       
 3. Install client-side dependencies:
-      npm install --prefix client
-4. Set up environment variables. Create a .env file in the root directory and add the following:
-            MONGO_URI=your_mongodb_connection_string
-            JWT_SECRET=your_jwt_secret_key
-            PORT=5000
-5. Run the application in development mode:
-      npm run dev
-6. To build the production version of the client:
-      npm run build
+   
+         npm install --prefix client
+
+5. Set up environment variables. Create a .env file in the root directory and add the following:
+
+         MONGO_URI=your_mongodb_connection_string
+         JWT_SECRET=your_jwt_secret_key
+         PORT=5000
+
+6. Run the application in development mode:
+   
+         npm run dev
+
+8. To build the production version of the client:
+   
+         npm run build
 
 ## Usage
     Once the app is running locally, visit http://localhost:5000 in your browser to interact with the platform.
