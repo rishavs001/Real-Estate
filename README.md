@@ -31,9 +31,9 @@ To run the project locally, follow these steps:
 3. Install client-side dependencies:
       npm install --prefix client
 4. Set up environment variables. Create a .env file in the root directory and add the following:
-      MONGO_URI=your_mongodb_connection_string
-      JWT_SECRET=your_jwt_secret_key
-      PORT=5000
+            MONGO_URI=your_mongodb_connection_string
+            JWT_SECRET=your_jwt_secret_key
+            PORT=5000
 5. Run the application in development mode:
       npm run dev
 6. To build the production version of the client:
