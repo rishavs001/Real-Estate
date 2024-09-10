@@ -1,5 +1,5 @@
 import { FaSearch } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
@@ -7,14 +7,21 @@ export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handle form submit to navigate and clear search
   const handleSubmit = (e) => {
     e.preventDefault();
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(location.search);
     urlParams.set('searchTerm', searchTerm);
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
+    
+    // Clear search bar after navigating
+    setSearchTerm('');
   };
 
+  // Sync searchTerm from URL on component load
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
@@ -22,6 +29,7 @@ export default function Header() {
       setSearchTerm(searchTermFromUrl);
     }
   }, [location.search]);
+
   return (
     <header className='bg-stone-500 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
@@ -46,7 +54,7 @@ export default function Header() {
             <FaSearch className='text-stone-500' />
           </button>
         </form>
-        <ul className='flex  items-center gap-4'>
+        <ul className='flex items-center gap-4'>
           <Link to='/'>
             <li className='font-bold text-sm sm:text-xl hidden sm:inline text-stone-800 hover:text-stone-900'>
               Home
